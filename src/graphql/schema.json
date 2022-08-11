@@ -15,7 +15,11 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
+<<<<<<< HEAD
           "name" : "getTodo",
+=======
+          "name" : "getTodo2",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -33,20 +37,32 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Todo",
+=======
+            "name" : "Todo2",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "listTodos",
+=======
+          "name" : "listTodo2s",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoFilterInput",
+=======
+              "name" : "ModelTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             },
             "defaultValue" : null
@@ -71,7 +87,11 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "ModelTodoConnection",
+=======
+            "name" : "ModelTodo2Connection",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -83,7 +103,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
+<<<<<<< HEAD
         "name" : "Todo",
+=======
+        "name" : "Todo2",
+>>>>>>> develop
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -190,7 +214,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
+<<<<<<< HEAD
         "name" : "ModelTodoConnection",
+=======
+        "name" : "ModelTodo2Connection",
+>>>>>>> develop
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -204,7 +232,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "OBJECT",
+<<<<<<< HEAD
                 "name" : "Todo",
+=======
+                "name" : "Todo2",
+>>>>>>> develop
                 "ofType" : null
               }
             }
@@ -229,7 +261,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "ModelTodoFilterInput",
+=======
+        "name" : "ModelTodo2FilterInput",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -267,7 +303,11 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoFilterInput",
+=======
+              "name" : "ModelTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             }
           },
@@ -280,7 +320,11 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoFilterInput",
+=======
+              "name" : "ModelTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             }
           },
@@ -290,7 +334,11 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
             "name" : "ModelTodoFilterInput",
+=======
+            "name" : "ModelTodo2FilterInput",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -716,7 +764,11 @@
         "name" : "Mutation",
         "description" : null,
         "fields" : [ {
+<<<<<<< HEAD
           "name" : "createTodo",
+=======
+          "name" : "createTodo2",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -726,7 +778,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "CreateTodoInput",
+=======
+                "name" : "CreateTodo2Input",
+>>>>>>> develop
                 "ofType" : null
               }
             },
@@ -736,20 +792,32 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoConditionInput",
+=======
+              "name" : "ModelTodo2ConditionInput",
+>>>>>>> develop
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Todo",
+=======
+            "name" : "Todo2",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "updateTodo",
+=======
+          "name" : "updateTodo2",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -759,7 +827,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "UpdateTodoInput",
+=======
+                "name" : "UpdateTodo2Input",
+>>>>>>> develop
                 "ofType" : null
               }
             },
@@ -769,20 +841,32 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoConditionInput",
+=======
+              "name" : "ModelTodo2ConditionInput",
+>>>>>>> develop
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Todo",
+=======
+            "name" : "Todo2",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "deleteTodo",
+=======
+          "name" : "deleteTodo2",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -792,7 +876,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
                 "name" : "DeleteTodoInput",
+=======
+                "name" : "DeleteTodo2Input",
+>>>>>>> develop
                 "ofType" : null
               }
             },
@@ -802,14 +890,22 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoConditionInput",
+=======
+              "name" : "ModelTodo2ConditionInput",
+>>>>>>> develop
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Todo",
+=======
+            "name" : "Todo2",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -821,7 +917,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "CreateTodoInput",
+=======
+        "name" : "CreateTodo2Input",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -861,7 +961,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "ModelTodoConditionInput",
+=======
+        "name" : "ModelTodo2ConditionInput",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -890,7 +994,11 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoConditionInput",
+=======
+              "name" : "ModelTodo2ConditionInput",
+>>>>>>> develop
               "ofType" : null
             }
           },
@@ -903,7 +1011,11 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelTodoConditionInput",
+=======
+              "name" : "ModelTodo2ConditionInput",
+>>>>>>> develop
               "ofType" : null
             }
           },
@@ -913,7 +1025,11 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
             "name" : "ModelTodoConditionInput",
+=======
+            "name" : "ModelTodo2ConditionInput",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -923,7 +1039,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "UpdateTodoInput",
+=======
+        "name" : "UpdateTodo2Input",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -963,7 +1083,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "DeleteTodoInput",
+=======
+        "name" : "DeleteTodo2Input",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -988,61 +1112,97 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
+<<<<<<< HEAD
           "name" : "onCreateTodo",
+=======
+          "name" : "onCreateTodo2",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelSubscriptionTodoFilterInput",
+=======
+              "name" : "ModelSubscriptionTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Todo",
+=======
+            "name" : "Todo2",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "onUpdateTodo",
+=======
+          "name" : "onUpdateTodo2",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelSubscriptionTodoFilterInput",
+=======
+              "name" : "ModelSubscriptionTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Todo",
+=======
+            "name" : "Todo2",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "onDeleteTodo",
+=======
+          "name" : "onDeleteTodo2",
+>>>>>>> develop
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelSubscriptionTodoFilterInput",
+=======
+              "name" : "ModelSubscriptionTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Todo",
+=======
+            "name" : "Todo2",
+>>>>>>> develop
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -1054,7 +1214,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "ModelSubscriptionTodoFilterInput",
+=======
+        "name" : "ModelSubscriptionTodo2FilterInput",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1092,7 +1256,11 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelSubscriptionTodoFilterInput",
+=======
+              "name" : "ModelSubscriptionTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             }
           },
@@ -1105,7 +1273,11 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "ModelSubscriptionTodoFilterInput",
+=======
+              "name" : "ModelSubscriptionTodo2FilterInput",
+>>>>>>> develop
               "ofType" : null
             }
           },
@@ -1374,7 +1546,233 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "ModelSubscriptionIntInput",
+=======
+        "name" : "ModelBooleanInput",
+>>>>>>> develop
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+<<<<<<< HEAD
+            "name" : "Int",
+=======
+            "name" : "Boolean",
+>>>>>>> develop
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+<<<<<<< HEAD
+            "name" : "Int",
+=======
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelSubscriptionFloatInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+>>>>>>> develop
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "le",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+<<<<<<< HEAD
+            "name" : "Int",
+=======
+            "name" : "Float",
+>>>>>>> develop
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "lt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+<<<<<<< HEAD
+            "name" : "Int",
+=======
+            "name" : "Float",
+>>>>>>> develop
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ge",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+<<<<<<< HEAD
+            "name" : "Int",
+=======
+            "name" : "Float",
+>>>>>>> develop
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+<<<<<<< HEAD
+            "name" : "Int",
+=======
+            "name" : "Float",
+>>>>>>> develop
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "Float",
+>>>>>>> develop
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "in",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "Float",
+>>>>>>> develop
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "notIn",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "Float",
+>>>>>>> develop
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+<<<<<<< HEAD
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelSubscriptionBooleanInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+=======
+        "kind" : "SCALAR",
+        "name" : "Float",
+        "description" : "Built-in Float",
+        "fields" : null,
+        "inputFields" : null,
+>>>>>>> develop
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
+        "name" : "ModelIntInput",
+=======
+        "name" : "ModelSubscriptionIntInput",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1445,6 +1843,9 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
+          "name" : "attributeExists",
+=======
           "name" : "in",
           "description" : null,
           "type" : {
@@ -1481,6 +1882,7 @@
         "fields" : null,
         "inputFields" : [ {
           "name" : "ne",
+>>>>>>> develop
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1489,105 +1891,19 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelIntInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "le",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "lt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "ge",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "gt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "between",
-          "description" : null,
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
+<<<<<<< HEAD
           "name" : "attributeType",
           "description" : null,
           "type" : {
             "kind" : "ENUM",
             "name" : "ModelAttributeTypes",
+=======
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -1690,6 +2006,7 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+<<<<<<< HEAD
         "kind" : "SCALAR",
         "name" : "Float",
         "description" : "Built-in Float",
@@ -1701,6 +2018,10 @@
       }, {
         "kind" : "INPUT_OBJECT",
         "name" : "ModelSubscriptionFloatInput",
+=======
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelIntInput",
+>>>>>>> develop
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1708,7 +2029,11 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "Float",
+=======
+            "name" : "Int",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -1717,7 +2042,11 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "Float",
+=======
+            "name" : "Int",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -1726,7 +2055,11 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "Float",
+=======
+            "name" : "Int",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -1735,7 +2068,11 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "Float",
+=======
+            "name" : "Int",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -1744,7 +2081,11 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "Float",
+=======
+            "name" : "Int",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -1753,7 +2094,11 @@
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
+<<<<<<< HEAD
             "name" : "Float",
+=======
+            "name" : "Int",
+>>>>>>> develop
             "ofType" : null
           },
           "defaultValue" : null
@@ -1765,12 +2110,17 @@
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
               "name" : "Float",
+=======
+              "name" : "Int",
+>>>>>>> develop
               "ofType" : null
             }
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "in",
           "description" : null,
           "type" : {
@@ -1794,6 +2144,23 @@
               "name" : "Float",
               "ofType" : null
             }
+=======
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
+            "ofType" : null
+>>>>>>> develop
           },
           "defaultValue" : null
         } ],
@@ -1820,6 +2187,7 @@
         } ],
         "possibleTypes" : null
       }, {
+<<<<<<< HEAD
         "kind" : "INPUT_OBJECT",
         "name" : "ModelBooleanInput",
         "description" : null,
@@ -1865,6 +2233,8 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+=======
+>>>>>>> develop
         "kind" : "OBJECT",
         "name" : "__Schema",
         "description" : "A GraphQL Introspection defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, the entry points for query, mutation, and subscription operations.",
@@ -2648,6 +3018,26 @@
         "onFragment" : false,
         "onField" : true
       }, {
+<<<<<<< HEAD
+=======
+        "name" : "deprecated",
+        "description" : null,
+        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
+        "args" : [ {
+          "name" : "reason",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : "\"No longer supported\""
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+>>>>>>> develop
         "name" : "aws_iam",
         "description" : "Tells the service this field/object has access authorized by sigv4 signing.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
@@ -2735,6 +3125,7 @@
         "onFragment" : false,
         "onField" : false
       }, {
+<<<<<<< HEAD
         "name" : "deprecated",
         "description" : null,
         "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
@@ -2752,6 +3143,8 @@
         "onFragment" : false,
         "onField" : false
       }, {
+=======
+>>>>>>> develop
         "name" : "aws_lambda",
         "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
