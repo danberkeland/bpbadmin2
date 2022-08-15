@@ -9,7 +9,6 @@ function App() {
     <React.Fragment>
       <Customers />
       <Products />
-      Test
     </React.Fragment>
   );
 }
