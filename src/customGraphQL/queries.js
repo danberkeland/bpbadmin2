@@ -111,3 +111,70 @@ export const listAuth = /* GraphQL */ `
     }
   }
 `;
+
+export const listProductsForTable = /* GraphQL */ `
+  query ProdSortAZ(
+    $Type: String!
+    $prodName: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelProductFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    prodSortAZ(
+      Type: $Type
+      prodName: $prodName
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        prodName
+        prodNick
+        doughNick
+        readyTime
+        bakedWhere
+        wholePrice
+        retailPrice
+        leadTime
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+
+export const getProductForEditing = /* GraphQL */ `
+  query GetProduct($prodNick: String!) {
+    getProduct(prodNick: $prodNick) {
+      Type
+      prodName
+      prodNick
+      packGroup
+      packSize
+      doughNick
+      freezerThaw
+      packGroupOrder
+      readyTime
+      bakedWhere
+      wholePrice
+      retailPrice
+      isWhole
+      weight
+      descrip
+      picURL
+      squareID
+      forBake
+      bakeExtra
+      batchSize
+      defaultInclude
+      leadTime
+      qbID
+      createdAt
+      updatedAt
+      inventoryProductId
+    }
+  }
+`;

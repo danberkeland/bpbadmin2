@@ -1,10 +1,22 @@
-
-
 import { API, graphqlOperation } from "aws-amplify";
 
-import { listProductBackups, getProduct } from "../../graphql/queries";
+import { listProductBackups, getProduct, listProducts } from "../../graphql/queries";
 import { updateProduct, createProduct } from "../../graphql/mutations";
 
+// *********************************
+// Helpers for current Products Page
+// *********************************
+
+
+
+
+
+
+
+
+// ***********
+// Old GraphQL
+// ***********
 
 export const grabOldProd = async () => {
     const loc = await API.graphql(
@@ -105,3 +117,4 @@ export const grabOldProd = async () => {
       console.log("error on creating products", error);
     }
   };
+
