@@ -58,7 +58,7 @@
         },
         "rpcPrototype": {
           "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
-          "s3Key": "amplify-builds/rpcPrototype-432f353059617967654c-build.zip"
+          "s3Key": "amplify-builds/rpcPrototype-792f6f316b767a6a5274-build.zip"
         }
       }
     }

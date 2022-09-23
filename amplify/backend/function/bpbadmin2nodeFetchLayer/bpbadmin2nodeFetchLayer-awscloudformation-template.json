@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.0.0\",\"stackType\":\"function-LambdaLayer\",\"metadata\":{}}",
+  "Description": "Lambda layer resource stack creation using Amplify CLI",
   "Parameters": {
     "env": {
       "Type": "String"
@@ -20,23 +20,19 @@
     }
   },
   "Resources": {
-    "LambdaLayerVersion287f89a1": {
+    "LambdaLayerVersionf81cb9c7": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
-        "CompatibleRuntimes": {
-          "Ref": "runtimes"
-        },
+        "CompatibleRuntimes": [
+          "nodejs14.x"
+        ],
         "Content": {
           "S3Bucket": {
             "Ref": "deploymentBucketName"
           },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
+          "S3Key": "amplify-builds/bpbadmin2nodeFetchLayer-LambdaLayerVersionf81cb9c7-build.zip"
         },
-        "Description": {
-          "Ref": "description"
-        },
+        "Description": "Updated layer version 2022-09-23T17:24:51.293Z",
         "LayerName": {
           "Fn::Sub": [
             "bpbadmin2nodeFetchLayer-${env}",
@@ -51,13 +47,11 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionPrivate287f89a1": {
+    "LambdaLayerPermissionPrivatef81cb9c7": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": {
-          "Ref": "LambdaLayerVersion287f89a1"
-        },
+        "LayerVersionArn": "arn:aws:lambda:us-east-2:191477602114:layer:bpbadmin2nodeFetchLayer-devtwo:2",
         "Principal": {
           "Ref": "AWS::AccountId"
         }
@@ -67,7 +61,7 @@
   "Outputs": {
     "Arn": {
       "Value": {
-        "Ref": "LambdaLayerVersion287f89a1"
+        "Ref": "LambdaLayerVersionf81cb9c7"
       }
     }
   }
