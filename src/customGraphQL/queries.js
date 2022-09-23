@@ -178,3 +178,32 @@ export const getProductForEditing = /* GraphQL */ `
     }
   }
 `;
+
+export const listLocationsForTable = /* GraphQL */ `
+  query ListLocations(
+    $locNick: String
+    $filter: ModelLocationFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listLocations(
+      locNick: $locNick
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        locNick
+        locName
+        subs {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

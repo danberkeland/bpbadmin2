@@ -8,8 +8,8 @@ import { getLocation, getUser, listLocationUsers } from "../graphql/queries";
 //  Checks for and, if exists, returns full Cognito object for user
 export const checkUser = async () => {
   try {
-    console.log("currentAuthenticatedUser");
     let use = await Auth.currentAuthenticatedUser();
+    console.log("currentAuthenticatedUser: ", use);
     return use;
   } catch (err) {
     console.log("Error AUthenticating User", err);
@@ -71,11 +71,14 @@ export const grabAuth = async (loc, sub) => {
 };
 
 // Returns List of Locations/User combo details
-export const grabLocationUsers = async () => {
+export const grabLocationUsers = async (sub) => {
   console.log("listLocationUsers");
   const userList = await API.graphql(
     graphqlOperation(listLocationUsers, {
       limit: "1000",
+      filter: {
+        sub: {eq: sub}
+      }
     })
   );
   return userList;
@@ -92,3 +95,7 @@ export const grabFullLocation = async (selected) => {
   let fullInfo = locInfo.data.getLocation
   return fullInfo
 }
+
+// filter: {
+//   // readyTime: {le: 12} // tested -- works; define filters programmatically in the future?
+// }

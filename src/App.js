@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useContext } from "react";
 
 import { Amplify } from "aws-amplify";
@@ -93,11 +90,12 @@ export function App() {
     <React.Fragment>
       {isLoading && <Loader />}
    
-      Welcome {userDetails.userName}. Location: {chosen.locName}. Authtype:{" "}
-      {authType}.
+      Welcome {userDetails.userName}. Location: {chosen.locName}. Authtype:{authType}. <br />
+      formType: {formType}
+    
       {formType === "signedIn" && (
         <React.Fragment>
-          <Nav />
+          {/* <Nav /> Moved to ./Pages.js for inclusion in <Router> component, enabling programmatic navigation (also see ./Nav.js)*/} 
           <Pages />
         </React.Fragment>
       )}

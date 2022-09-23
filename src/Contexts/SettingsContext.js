@@ -44,17 +44,17 @@ export const SettingsProvider = (props) => {
   const [ isLoading, setIsLoading ] = useState(false)
 
   useEffect(() => {
-    fetchCustomers();
+    fetchCustomers(userDetails.sub);
   }, [userDetails.sub]);
 
-  const fetchCustomers = async () => {
+  const fetchCustomers = async (sub) => {
     try {
-      grabLocationUsers().then((userList) => {
-        console.log("userStuff",userList.data.listLocationUsers.items)
+      grabLocationUsers(sub).then((userList) => {
+        console.log("userStuff",userList.data.listLocationUsers.items);
         let userArray = userList.data.listLocationUsers.items.map((use) => ({
           userName: use.user.name,
           sub: use.user.sub,
-          subs: use.location.subs.items.map(use => use.user.sub),
+          // subs: use.location.subs.items.map(use => use.user.sub),
           locName: use.location.locName,
           locNick: use.location.locNick,
           authType: use.authType,

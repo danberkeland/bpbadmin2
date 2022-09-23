@@ -14,6 +14,8 @@ import { API, graphqlOperation } from "aws-amplify";
 import * as Queries from "../../graphql/queries";
 import * as CustomQueries from "../../customGraphQL/queries";
 
+import { testProducts, getUserToken, getDDbUserInfo } from "../../restAPIs";
+
 import { classNames } from 'primereact/utils';
 import { Button } from "primereact/button";
 import { DataTable } from "primereact/datatable";
@@ -30,6 +32,8 @@ import { Toast } from 'primereact/toast';
 // import "primeicons/primeicons.css";
 
 // Page to perform CRUD on product data
+
+// const API_bpbrpc = "https://tbobxwqoq1.execute-api.us-east-2.amazonaws.com/devtwo";
 
 function Products() {
   const doughList = [
@@ -239,6 +243,9 @@ function Products() {
         <Button label="remap Products" onClick={remap} disabled/>
         <Button label="List Products" onClick={fetchProducts} />
         <Button label="Edit Selected Product" onClick={() => editProduct(selectedProduct)} disabled={!selectedProduct}/>
+        <Button label="Test Products" onClick={testProducts} />
+        <Button label="Log User" onClick={getUserToken} />
+        <Button label="Log Full User" onClick={getDDbUserInfo} />
 
         <div>
           <DataTable 

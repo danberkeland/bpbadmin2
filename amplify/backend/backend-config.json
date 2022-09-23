@@ -9,16 +9,49 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 100,
+              "apiKeyExpirationDate": "2022-12-29T21:45:12.414Z",
+              "description": ""
             }
           },
           "additionalAuthenticationProviders": []
         }
       }
+    },
+    "bpbrpc": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "rpcPrototype",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "function": {
     "testingGrQL": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    },
+    "grabLocList": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    },
+    "bpbadmin2nodeFetchLayer": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
+    },
+    "rpcPrototype": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
@@ -34,21 +67,10 @@
         }
       ]
     },
-    "grabLocList": {
-      "build": true,
+    "bpbadmin2luxon": {
       "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "api",
-          "resourceName": "bpbadmin2",
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
-          ]
-        }
-      ]
+      "service": "LambdaLayer",
+      "build": true
     }
   },
   "auth": {

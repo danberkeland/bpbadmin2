@@ -18,11 +18,47 @@
       "function": {
         "testingGrQL": {
           "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
-          "s3Key": "amplify-builds/testingGrQL-3643594c633169376d31-build.zip"
+          "s3Key": "amplify-builds/testingGrQL-796d4853444673396857-build.zip"
         },
         "grabLocList": {
           "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
-          "s3Key": "amplify-builds/grabLocList-35687837793763375567-build.zip"
+          "s3Key": "amplify-builds/grabLocList-39706b766c3179647856-build.zip"
+        },
+        "aaatest": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/aaatest-69327665566672686a39-build.zip"
+        },
+        "bpbadmin2nodefetch": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/bpbadmin2nodefetch-LambdaLayerVersion399a9d30-build.zip"
+        },
+        "bpbadmin2luxon": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/bpbadmin2luxon-LambdaLayerVersion6d333dc0-build.zip"
+        },
+        "bpbgGetProduct": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/bpbgGetProduct-2f2f346b6d4565694e6f-build.zip"
+        },
+        "bpbgListProducts": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/bpbgListProducts-713945682b6849386b73-build.zip"
+        },
+        "helloworld": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/helloworld-7041316575516a455452-build.zip"
+        },
+        "productRequest": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/productRequest-3239536776354b554470-build.zip"
+        },
+        "bpbadmin2nodeFetchLayer": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/bpbadmin2nodeFetchLayer-LambdaLayerVersion287f89a1-build.zip"
+        },
+        "rpcPrototype": {
+          "deploymentBucketName": "amplify-bpbadmin2-devtwo-113532-deployment",
+          "s3Key": "amplify-builds/rpcPrototype-432f353059617967654c-build.zip"
         }
       }
     }

@@ -1,7 +1,4 @@
 /* Amplify Params - DO NOT EDIT
-	API_BPBADMIN2_GRAPHQLAPIENDPOINTOUTPUT
-	API_BPBADMIN2_GRAPHQLAPIIDOUTPUT
-	API_BPBADMIN2_GRAPHQLAPIKEYOUTPUT
 	ENV
 	REGION
 Amplify Params - DO NOT EDIT */
@@ -24,8 +21,6 @@ query MyQuery {
 }
  
 `;
-
-
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}

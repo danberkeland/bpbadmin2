@@ -1,11 +1,4 @@
 {
-  "permissions": {
-    "api": {
-      "bpbadmin2": [
-        "Query",
-        "Mutation"
-      ]
-    }
-  },
+  "permissions": {},
   "lambdaLayers": []
 }
