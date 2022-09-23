@@ -16,6 +16,7 @@
     "final-form": "^4.20.7",
     "formik": "^2.2.9",
     "moment": "^2.29.4",
+    "node-pre-gyp": "^0.17.0",
     "primeicons": "^5.0.0",
     "primereact": "^8.3.0",
     "react": "^18.2.0",
