@@ -83,7 +83,8 @@
         "testingGrQL": {
           "deploymentBucketName": "amplify-bpbadmin2-dev-75248-deployment",
           "s3Key": "amplify-builds/testingGrQL-584a676a734250524754-build.zip"
-        }
+        },
+        "grabLocList": {}
       }
     }
   },
