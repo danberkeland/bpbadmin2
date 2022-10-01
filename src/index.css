@@ -5,9 +5,140 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+  font-weight: normal;
+  color: black;
+  margin: 5px 20px;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-weight: normal;
+  margin: 5px 20px;
+  font-size: 1em;
+}
+
+h4 {
+  font-weight: normal;
+  margin: 5px 20px;
+  font-size: .8em;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 10px 20px;
+  color: #006aff;
+}
+
+h3, h4 {
+  color: grey;
+}
+
+button {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  color:#005ad9;
+  background-color: #f0f1f2;
+  font-size: 1.3em;
+  border: none;
+}
+
+button:hover {
+  background-color: #e2e3e3;
+}
+
+.submitButton {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 200;
+}
+
+.greyBar {
+  width: 100%;
+  height: 10px;
+  background-color: #e2e3e3;
+  margin-top: 20px;
+}
+
+
+.bottomSpace {
+  position:relative;
+  width: 100%;
+  height: 200px;
+  background-color: white;
+}
+
+
+
+.tabContainer .tabMenu .p-tabmenu-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.tabContainer .tabMenu .p-menuitem-link {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tabContainer .tabMenu  .p-menuitem-icon {
+  font-size: 2em;
+}
+
+
+
+
+.tabContainer {
+  z-index: 200;
+  position:fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.panelMenu .mypanel .p-panelmenu-header-link {
+  border: 0;
+  font-size: 1.2em;
+  background-color: white;
+  height: 70px;
+}
+
+.panelMenu .mypanel .p-menuitem-icon {
+  font-size: 1.2em;
+}
+
+
+/*
+.panelMenu .mypanel .p-menuitem-text::after {
+  font-size: 1.2em;
+  content: ">";
+  position: absolute;
+ right: 30px;
+}
+*/
+
+.dataTable .p-datatable-table .p-datatable-tbody tr td{
+  border-color: white;
+  font-size: 1.2em;
+}
+
+.productDetails {
+  display: block;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin: 20px 20px;
+  width: 90%;
+  align-items: center;
 }
