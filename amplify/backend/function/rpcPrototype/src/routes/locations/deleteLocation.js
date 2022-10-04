@@ -1,13 +1,24 @@
 import callGraphQL from '../../project_modules/appsync-crud.js';
-import { deleteLocation as query } from '../../project_modules/queries.js';
 
 /*******************
  * DELETE LOCATION *
  *******************/
+ 
+const mutation = /* GraphQL */ `
+	mutation DeleteLocation($locNick: String!) {
+		deleteLocation(input: {locNick: $locNick}) {
+			Type
+			locNick
+			locName
+			createdAt
+			updatedAt
+		}
+	}
+`;
 
 async function apiFunction(queryStringParameters, body){
-	let data = await callGraphQL(query, body);
-	return data;
+	let gqlResponse = await callGraphQL(mutation, body);
+	return gqlResponse.data.deleteLocation;
 	
 }
 

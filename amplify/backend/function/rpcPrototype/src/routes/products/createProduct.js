@@ -6,8 +6,8 @@ import { createProduct as query } from '../../project_modules/queries.js';
  ******************/
 
 async function apiFunction(queryStringParameters, body){
-	let data = await callGraphQL(query, body);
-	return data;
+	let gqlResponse = await callGraphQL(query, body);
+	return gqlResponse;
 	
 }
 

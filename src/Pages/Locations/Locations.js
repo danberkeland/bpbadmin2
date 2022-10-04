@@ -1,132 +1,62 @@
-import React, { useContext, useState } from "react";
+import React from "react"
 
-import { SettingsContext } from "../../Contexts/SettingsContext";
-import {
-  grabOldLoc,
-  checkExistsNewLoc,
-  updateNewLoc,
-  createNewLoc,
-} from "./LocationHelpers";
-import { LocationForm } from "./LocationComponents";
+// State Management
+import { useLocationStore } from './components/hooks.js'
 
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
-import { Button } from "primereact/button";
+// Components
+import LocationTable from "./components/LocationTable.jsx"
+import LocationForm from "./components/LocationForm.jsx"
+import LocationDeleteDialog from "./components/LocationDeleteDialog.jsx"
+import { Button } from "primereact/button"
 
-import { API } from "aws-amplify";
+const Locations = () => {
+	const { form, table } = useLocationStore()
 
-function Locations() {
-  const { setIsLoading } = useContext(SettingsContext);
+	return (
+				<div style={{ maxWidth: "500px", margin: "0 auto" }}>
 
-  const [locationTableData, setLocationTableData] = useState({});
-  const [selectedTableLocation, setSelectedTableLocation] = useState(null);
-  const [currentLocation, setCurrentLocation] = useState(null);
+					<h1>Locations</h1>
 
-  const [formIsVisible, setFormIsVisible] = useState(false);
-  const [formApiPath, setFormApiPath] = useState();
+					<Button label="View"
+						onClick={ () => {
+							form.setViewType("READ")
+						}}
+						disabled={!table.selected}
+					/>
 
-  const remap = () => {
-    setIsLoading(true);
-    grabOldLoc()
-      .then((oldLoc) => {
-        console.log("oldLoc", oldLoc);
-        for (let old of oldLoc) {
-          checkExistsNewLoc(old.nickName).then((exists) => {
-            console.log("exists", exists);
-            if (exists) {
-              updateNewLoc(old);
-            } else {
-              createNewLoc(old);
-            }
-          });
-        }
-      })
-      .then((e) => {
-        setIsLoading(false);
-        console.log("Location DB updated");
-      });
-  };
+					<Button label="Edit" 
+						onClick={() => {
+							form.setViewType("EDIT")
+						}}
+						disabled={!table.selected}
+					/>
 
-  const listLocations = async () => {
-    setIsLoading(true);
-    const response = await API.get("bpbrpc", "/locations/listLocations");
-    setIsLoading(false);
-    console.log("fetchLocations response:", response);
-    setLocationTableData(response);
-  };
+					<Button label="Delete"
+						onClick={() => {
+							form.setViewType("DELETE")
+						}}
+						disabled={!table.selected}
+					/>
 
-  const getLocation = async () => {
-    setIsLoading(true);
-    const response = await API.get(
-      "bpbrpc",
-      `/locations/getLocation?locNick=${selectedTableLocation.locNick}`
-    );
-    console.log("getLocation response:", response);
-    setIsLoading(false);
+					<Button label="Create New"
+						onClick={() => {
+							table.setSelected(null)
+							form.setViewType("CREATE")
+						}}
+					/>
 
-    return response;
-  };
+					<LocationTable />
+					{(form.viewType == "READ" || 
+						form.viewType == "CREATE" || 
+						(form.viewType == "EDIT" && table.selected)) &&
+						<LocationForm />
+					}
 
-  const editLocation = async () => {
-    const response = await getLocation();
-    setCurrentLocation(response);
-    setFormApiPath("/locations/updateLocation")
-    setFormIsVisible(true);
-  };
-
-  const createLocation = () => {
-    setCurrentLocation(null);
-    setFormApiPath("/locations/createLocation")
-    setFormIsVisible(true);
-  }
-
-  return (
-    <React.Fragment>
-      <Button label="remap Locations" onClick={remap} disabled />
-      <Button label="List Locations" onClick={listLocations} />
-      <Button
-        label="Edit Selected Location"
-        onClick={() => editLocation(selectedTableLocation)}
-        disabled={!selectedTableLocation}
-      />
-      <Button label="Create New Location" onClick={createLocation} />
-
-      <div>
-        <DataTable
-          value={locationTableData}
-          selectionMode="single"
-          metaKeySelection={false}
-          selection={selectedTableLocation}
-          onSelectionChange={(e) => setSelectedTableLocation(e.value)}
-          responsiveLayout="scroll"
-          size="small"
-          showGridlines
-          style={{ float: "left" }}
-        >
-          <Column field="locNick" header="locNick (ID)" sortable />
-          <Column field="locName" header="locName" sortable />
-          {/* <Column field="subs" header="subs" sortable filter="true" /> */}
-        </DataTable>
-
-        <div style={{ display: "inline-block" }}>
-          <pre style={{ minwidth: "250px" }}>
-            Selected Location: {JSON.stringify(selectedTableLocation, null, 4)}
-          </pre>
-
-          {formIsVisible && (
-            <LocationForm
-              apiPath={formApiPath} // i.e. "UPDATE" or "CREATE"
-              location={currentLocation}
-              hideForm={() => {
-                setFormIsVisible(false);
-                setCurrentLocation(null);
-              }}
-            />
-          )}
-        </div>
-      </div>
-    </React.Fragment>
-  );
+					{(form.viewType == "DELETE" && table.selected) &&
+						<LocationDeleteDialog />
+					}
+			</div>
+	)
 }
 
-export default Locations;
+export default Locations

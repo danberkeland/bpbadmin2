@@ -10,7 +10,7 @@ Amplify Params - DO NOT EDIT */
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
 
-const headers = {
+ const headers = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "*",
 };
@@ -18,27 +18,24 @@ const headers = {
 export const handler = async (event) => {
   console.log(`EVENT: ${JSON.stringify(event)}`);
 
-  let { path } = event;
+  let { path, queryStringParameters, body } = event;
   let statusCode;
-  let body;
 
+  let returnBody;
   try {
     const { default: executeApiMethod } = await import(
-      `./routes${path}/index.js`
+      `./routes${path}.js`
     );
-    body = await executeApiMethod(queryStringParameters, body);
+    returnBody = await executeApiMethod(queryStringParameters, body);
     statusCode = 200;
   } catch (err) {
-    body = JSON.stringify(err);
+    returnBody = JSON.stringify(err);
     statusCode = 400;
   }
 
   return {
     statusCode: statusCode,
     headers: headers,
-    body: JSON.stringify({
-      locList: body,
-      event: event,
-    }),
+    body: JSON.stringify(returnBody)
   };
 };

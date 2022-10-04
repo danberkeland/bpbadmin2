@@ -5,6 +5,8 @@ import { API, graphqlOperation } from "aws-amplify";
 import { listLocationBackups, getLocation } from "../../graphql/queries";
 import { updateLocation, createLocation } from "../../graphql/mutations";
 
+import _ from 'lodash'
+
 
 export const grabOldLoc = async () => {
     const loc = await API.graphql(

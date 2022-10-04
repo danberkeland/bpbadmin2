@@ -20,7 +20,7 @@
     }
   },
   "Resources": {
-    "LambdaLayerVersionf81cb9c7": {
+    "LambdaLayerVersion1d918d7a": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "CompatibleRuntimes": [
@@ -30,9 +30,9 @@
           "S3Bucket": {
             "Ref": "deploymentBucketName"
           },
-          "S3Key": "amplify-builds/bpbadmin2nodeFetchLayer-LambdaLayerVersionf81cb9c7-build.zip"
+          "S3Key": "amplify-builds/bpbadmin2nodeFetchLayer-LambdaLayerVersion1d918d7a-build.zip"
         },
-        "Description": "Updated layer version 2022-09-23T17:24:51.293Z",
+        "Description": "Updated layer version 2022-09-13T20:08:28.295Z",
         "LayerName": {
           "Fn::Sub": [
             "bpbadmin2nodeFetchLayer-${env}",
@@ -47,11 +47,21 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionPrivatef81cb9c7": {
+    "LambdaLayerPermissionPrivate1d918d7a": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": "arn:aws:lambda:us-east-2:191477602114:layer:bpbadmin2nodeFetchLayer-devtwo:2",
+        "LayerVersionArn": "arn:aws:lambda:us-east-2:191477602114:layer:bpbadmin2nodeFetchLayer-devtwo:5",
+        "Principal": {
+          "Ref": "AWS::AccountId"
+        }
+      }
+    },
+    "LambdaLayerPermissionPrivateLegacy4": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": "arn:aws:lambda:us-east-2:191477602114:layer:bpbadmin2nodeFetchLayer-devtwo:4",
         "Principal": {
           "Ref": "AWS::AccountId"
         }
@@ -61,7 +71,7 @@
   "Outputs": {
     "Arn": {
       "Value": {
-        "Ref": "LambdaLayerVersionf81cb9c7"
+        "Ref": "LambdaLayerVersion1d918d7a"
       }
     }
   }

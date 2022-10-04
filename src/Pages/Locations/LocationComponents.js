@@ -43,7 +43,7 @@ export const LocationForm = (props) => {
     updatedAt: "",
   };
 
-  let initialValues = props.location ? props.location : emptyLocation;
+  let initialValues = (props.location === {}) ? emptyLocation : props.location;
 	
 	// VALIDATION SCHEMA **************************
 
@@ -85,7 +85,6 @@ export const LocationForm = (props) => {
     updatedAt: Yup.mixed().optional(),
   });
 
-	let apiPath;
 	const formik = useFormik({
 		initialValues: initialValues,
 		validationSchema: locationSchema,
@@ -200,7 +199,7 @@ export const LocationForm = (props) => {
 						{getFormErrorMessage('picURL')}
 					</div>
 	
-					<div style={{ "margin-bottom": "25px" }}>
+					<div style={{ "marginBottom": "25px" }}>
 						<div className="field-checkbox">
 							<Checkbox inputId="toBePrinted" name="toBePrinted" checked={formik.values.toBePrinted} onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldValid('toBePrinted') })} />
 							<label htmlFor="toBePrinted" className={classNames({ 'p-error': isFormFieldValid('toBePrinted') })}>To Be Pritnted</label>
@@ -298,7 +297,7 @@ export const LocationForm = (props) => {
 					</div>
 
 					<Button type="submit" label="Submit" className="mt-2" />
-					<Button label="Cancel" classname="mt-2" onClick={props.hideForm}/>
+					<Button label="Cancel" className="mt-2" onClick={props.hideForm}/>
 
 				</form>
 			</div>

@@ -6,8 +6,8 @@ import { listProductsAZ as query } from '../../project_modules/queries.js';
  *****************/
 
 async function apiFunction(queryStringParameters, body) {
-	let data = await callGraphQL(query);
-  return data;
+	let gqlResponse = await callGraphQL(query, queryStringParameters);
+  return gqlResponse.data.prodSortAZ.items;
   
 }
 
