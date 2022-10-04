@@ -5,8 +5,8 @@ import { getUser } from "./graphql/queries";
 
 const API_testingGrQL = "https://dltjjr5aja.execute-api.us-east-2.amazonaws.com/dev/testingGrQL"
 const API_grabLocList = "https://lkho363aq2.execute-api.us-east-2.amazonaws.com/dev/grabloclist"
-const API_bpbgListProducts = "https://z6ar051vni.execute-api.us-east-2.amazonaws.com/devtwo/products"
-const API_testcors = "https://z6ar051vni.execute-api.us-east-2.amazonaws.com/devtwo/testcors"
+// const API_bpbgListProducts = "https://z6ar051vni.execute-api.us-east-2.amazonaws.com/devtwo/products"
+// const API_testcors = "https://z6ar051vni.execute-api.us-east-2.amazonaws.com/devtwo/testcors"
 
 export const testingGrQL = async (locNick, delivDate, dayOfWeek) => {
     let testOrder

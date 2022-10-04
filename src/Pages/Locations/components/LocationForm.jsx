@@ -85,7 +85,7 @@ function LocationForm() {
             <TextField name="email" label="email" disabled={form.viewType === "READ"} formikProps={formikProps} />
             <TextField name="phone" label="Phone" disabled={form.viewType === "READ"} formikProps={formikProps} />
 
-            <TextField name="zoneNick" label="Zone Nickname" disabled={form.viewType == "READ"} formikProps={formikProps} />
+            <TextField name="zoneNick" label="Zone Nickname" disabled={form.viewType === "READ"} formikProps={formikProps} />
             {/* <pre>{JSON.stringify(location.data, null, 2)}</pre> */}
           
             {/*

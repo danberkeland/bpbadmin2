@@ -1,7 +1,7 @@
 import React from "react"
 
 // State Management
-import { useLocationStore, useLocation } from './components/hooks.js'
+import { useLocationStore } from './components/hooks.js'
 
 // Components
 import LocationTable from "./components/LocationTable.jsx"
@@ -46,13 +46,13 @@ const AaaBackendTest = () => {
 					/>
 
 					<LocationTable />
-					{(form.viewType == "READ" || 
-						form.viewType == "CREATE" || 
-						(form.viewType == "EDIT" && table.selected)) &&
+					{(form.viewType === "READ" || 
+						form.viewType === "CREATE" || 
+						(form.viewType === "EDIT" && table.selected)) &&
 						<LocationForm />
 					}
 
-					{(form.viewType == "DELETE" && table.selected) &&
+					{(form.viewType === "DELETE" && table.selected) &&
 						<LocationDeleteDialog />
 					}
 			</div>

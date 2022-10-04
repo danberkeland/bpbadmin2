@@ -46,13 +46,13 @@ const Locations = () => {
 					/>
 
 					<LocationTable />
-					{(form.viewType == "READ" || 
-						form.viewType == "CREATE" || 
-						(form.viewType == "EDIT" && table.selected)) &&
+					{(form.viewType === "READ" || 
+						form.viewType === "CREATE" || 
+						(form.viewType === "EDIT" && table.selected)) &&
 						<LocationForm />
 					}
 
-					{(form.viewType == "DELETE" && table.selected) &&
+					{(form.viewType === "DELETE" && table.selected) &&
 						<LocationDeleteDialog />
 					}
 			</div>

@@ -1,5 +1,4 @@
 import * as Yup from 'yup'
-import { useFormik } from 'formik';
 
 const optionalString = Yup.string().optional().nullable();
 const deliveryTime = Yup.number()
