@@ -27,9 +27,11 @@ function LocationTable() {
 					console.log(JSON.stringify(e.value))
 					}
 				}}
-				responsiveLayout="scroll"
+				// responsiveLayout="scroll"
 				size="small"
 				showGridlines
+				scrollable 
+				scrollHeight="600px"
 			>
 				{Object.keys(locationList.data[0]).map( label => 
 					<Column key={label} field={label} header={label} sortable /> 

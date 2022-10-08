@@ -5,8 +5,6 @@ import useSWRImmutable from "swr/immutable";
 export const fetchQuery = async (path) => await API.get("bpbrpc", path)
 export const fetchMutation = async (path, body) => await API.post("bpbrc", path, body)
 
-
-
 export function useProductsPageStore() {
   const emptySelection = {prodNick: null, prodName: null}
 
@@ -32,3 +30,4 @@ export function useProductsPageStore() {
     }
   }
 }
+

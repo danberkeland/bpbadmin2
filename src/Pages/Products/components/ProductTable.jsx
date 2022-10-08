@@ -10,9 +10,7 @@ import { fetchQuery, useProductsPageStore } from "./hooks"
 
 
 function ProductsTable() {
-  const productList = useSWRImmutable('/products/listProducts', fetchQuery, {
-    revalidateIfStale: false
-  })
+  const productList = useSWRImmutable('/products/listProducts', fetchQuery)
   const { table, form } = useProductsPageStore()
   
   if (productList.error) return <div>failed to load</div>
@@ -34,6 +32,8 @@ function ProductsTable() {
       responsiveLayout="scroll"
       size="small"
       showGridlines
+      scrollable 
+      scrollHeight="600px"
     >
       {Object.keys(productList.data[0]).map( label => 
         <Column key={label} field={label} header={label} sortable /> 

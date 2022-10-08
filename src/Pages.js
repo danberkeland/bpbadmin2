@@ -15,6 +15,7 @@ import EODCounts from "./Pages/EODCounts/EODCounts";
 import Logistics from "./Pages/Logistics/Logistics";
 import Locations from "./Pages/Locations/Locations";
 import AaaBackendTest from "./Pages/AaaBackendTest/AaaBackendTest";
+import Database from "./Pages/Database/Database";
 import Nav from "./Nav";
 
 function Pages() {
@@ -36,6 +37,7 @@ function Pages() {
         <Route exact path="/Logistics" element={<Logistics />} />
         <Route exact path="/Locations" element={<Locations />} />
         <Route exact path="/aaaTest" element={<AaaBackendTest />} />
+        <Route exact path="/Database" element={<Database />} />
       </Routes>
     </Router>
   );

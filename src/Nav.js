@@ -115,6 +115,13 @@ function Nav() {
         navigate("/Settings");
       },
     },
+    {
+      label: "Database",
+      icon: "pi pi-database",
+      command: () => {
+        navigate("/Database");
+      },
+    },
   ]);
 
   useEffect(() => {

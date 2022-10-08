@@ -1,14 +1,21 @@
 import callGraphQL from '../../project_modules/appsync-crud.js';
-import { deleteProduct as query } from '../../project_modules/queries.js';
 
 /******************
  * DELETE PRODUCT *
  ******************/
+ 
+const mutation = /* GraphQL */ `
+mutation MyMutation($prodNick: String!) {
+ deleteProduct(input: {prodNick: $prodNick}) {
+   prodNick
+   prodName
+ }
+}
+`;
 
 async function apiFunction(queryStringParameters, body){
-	let gqlResponse = await callGraphQL(query, body);
-	return gqlResponse;
-	
+	let gqlResponse = await callGraphQL(mutation, body);
+	return gqlResponse.data.deleteProduct;
 }
 
 export default apiFunction;

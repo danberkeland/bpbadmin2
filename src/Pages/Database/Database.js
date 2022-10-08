@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import TableEditor from "../../Components/table-editor/TableEditor";
-import * as Yup from 'yup'
 
 import { productSchema, locationSchema, doughSchema } from './itemSchemas'
 import { Dropdown } from "primereact/dropdown";
 
-const AaaBackendTest = () => {
+const Database = () => {
 
 	const [tableName, setTableName] = useState("foo")
 	const [itemSchema, setItemSchema] = useState(null)
@@ -43,4 +42,4 @@ const AaaBackendTest = () => {
 	)
 }
 
-export default AaaBackendTest
+export default Database

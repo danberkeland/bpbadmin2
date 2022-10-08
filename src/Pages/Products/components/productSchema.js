@@ -1,41 +1,45 @@
 import * as Yup from 'yup'
 
+const optStr = Yup.string().optional()
+const optInt = Yup.number().integer().min(0).optional()
+const optFloat = Yup.number().min(0).optional()
+
 export const productSchema = Yup.object({
   prodNick: Yup.string().required(),
   prodName: Yup.string().required(),
-  packGroup: Yup.string(),
-  packSize: Yup.number().integer().positive(),
-  doughNick: Yup.string(),
+  packGroup: optStr,
+  packSize: optInt,
+  doughNick: optStr,
   freezerThaw: Yup.bool(),
-  packGroupOrder: Yup.number().integer(),
-  shapeDay: Yup.number().integer(),
-  shapeNick: Yup.string(),
-  bakeDay: Yup.number.integer(),
-  bakeNick: Yup.string(),
-  guarantee: Yup.string(),
-  transferStage: Yup.string(),
-  readyTime: Yup.number(),
+  packGroupOrder: optInt,
+  shapeDay: optInt,
+  shapeNick: optStr,
+  bakeDay: optStr,
+  bakeNick: optStr,
+  guarantee: optStr,
+  transferStage: optStr,
+  readyTime: optFloat,
   bakedWhere: Yup.array().of(Yup.string()),
-  wholePrice: Yup.number(),
-  retailPrice: Yup.number(),
+  wholePrice: optFloat,
+  retailPrice: optFloat,
   isWhole: Yup.boolean(),
-  weight: Yup.number(),
-  descrip: Yup.string(),
-  picURL: Yup.string(),
-  squareID: Yup.string(),
-  forBake: Yup.string(),
-  bakeExtra: Yup.number.integer(),
-  batchSize: Yup.number.integer(),
+  weight: optFloat,
+  descrip: optStr,
+  picURL: optStr,
+  squareID: optStr,
+  forBake: optStr,
+  bakeExtra: optInt,
+  batchSize: optInt,
   defaultInclude: Yup.boolean(),
-  leadTime: Yup.number.integer(),
-  qbID: Yup.string(),
+  leadTime: optInt,
+  qbID: optStr,
 })
 
 export const emptyProduct = {
   Type: "", 
   bakeDay: 10, 
   bakeNick: "", 
-  bakedWhere: "", 
+  bakedWhere: [""], 
   descrip: "", 
   doughNick: "", 
   freezerThaw: false, 
@@ -64,3 +68,38 @@ export const emptyProduct = {
   qbID: "", 
 
 }
+
+// Reference from GraphQL
+
+// input CreateProductInput {
+//   Type: String  *** handled by AWS automatically
+//   prodName: String!
+//   prodNick: String!
+//   packGroup: String
+//   packSize: Int
+//   doughNick: String
+//   freezerThaw: Boolean
+//   packGroupOrder: Int
+//   shapeDay: Int
+//   shapeNick: String
+//   bakeDay: Int
+//   bakeNick: String
+//   guarantee: String
+//   transferStage: String
+//   readyTime: Float
+//   bakedWhere: [String]
+//   wholePrice: Float
+//   retailPrice: Float
+//   isWhole: Boolean
+//   weight: Float
+//   descrip: String
+//   picURL: String
+//   squareID: String
+//   forBake: String
+//   bakeExtra: Int
+//   batchSize: Int
+//   defaultInclude: Boolean
+//   leadTime: Int
+//   qbID: String
+//   inventoryProductId: ID  *** handled by AWS automatically?
+// }

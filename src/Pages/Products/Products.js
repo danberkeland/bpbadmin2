@@ -1,9 +1,9 @@
-import React, { useRef } from "react"
+import React from "react"
 import { useProductsPageStore } from "./components/hooks"
 
 import ProductsTable from "./components/ProductTable"
-import { Button } from "primereact/button"
-import { DeleteButton } from "./components/CrudButtons"
+import { EditForm, CreateForm, ViewForm } from "./components/ProductForms"
+import { CreateButton, ViewButton, EditButton, DeleteButton } from "./components/CrudButtons"
 
 function Products() {
   const { table, form } = useProductsPageStore()
@@ -12,20 +12,19 @@ function Products() {
     <div style={{ maxWidth: "500px", margin: "0 auto" }}>
       
       <h1>Products</h1>
-      <Button label="View Details" onClick={() => form.setViewMode("READ")} disabled={!table.selected.prodNick} />
-      <Button label="Edit" onClick={() => form.setViewMode("EDIT")} disabled={!table.selected.prodNick} />
 
-      <DeleteButton 
-        disabled={!table.selected.prodNick} 
-        toDelete={table.selected.prodNick} />
+      <CreateButton />
+      <ViewButton />
+      <EditButton />
+      <DeleteButton />
 
-      <Button label="Create" onClick={() => form.setViewMode("CREATE")} />
-      
       <pre>{"form: " + JSON.stringify(form)}</pre>
       <pre>{"table: " + JSON.stringify(table)}</pre>
-
       <ProductsTable/>
 
+      {form.viewMode === "CREATE" && <CreateForm />}
+      {form.viewMode === "VIEW" && <ViewForm prodNick={table.selected.prodNick} />}
+      {form.viewMode === "EDIT" && <EditForm prodNick={table.selected.prodNick} />}
 
     </div>
   )
