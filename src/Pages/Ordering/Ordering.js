@@ -41,6 +41,10 @@ function Ordering() {
       setIsLoading(false);
     });
 
+    const fetcher = async (path) => await API.get('bpbrpc', path)
+
+    const { data: locationList } = useSWR('/locations/listLocations', fetcher)
+
     // alternate method with an existing GraphQL function + clean up on the client side
     /*
     grabLocNames().then((response) => {
