@@ -10,6 +10,30 @@
       "StackName": "amplify-bpbadmin2-prod-74923",
       "StackId": "arn:aws:cloudformation:us-east-2:191477602114:stack/amplify-bpbadmin2-prod-74923/cb46ddb0-1984-11ed-8f83-06b491efaba2",
       "AmplifyAppId": "d2nhue3419gd8g"
+    },
+    "categories": {
+      "auth": {
+        "bpbadmin2db0d25d4": {}
+      },
+      "function": {
+        "testingGrQL": {},
+        "grabLocList": {},
+        "grabStandOrder": {},
+        "grabOrder": {},
+        "grabDetailedProductList": {},
+        "grabSimpleProductList": {},
+        "grabProductById": {},
+        "createProduct": {},
+        "deleteProduct": {},
+        "updateProduct": {},
+        "grabDetailedLocationList": {},
+        "grabSimpleLocationList": {},
+        "bpbrouter": {},
+        "deleteCognitoUser": {},
+        "createCognitoUser": {},
+        "updateCognitoUser": {},
+        "confirmCognitoEmail": {}
+      }
     }
   },
   "devtwo": {
