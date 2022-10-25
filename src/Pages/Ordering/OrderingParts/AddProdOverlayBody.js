@@ -1,11 +1,12 @@
-import React, {useState, useContext} from "react";
+import React, {useState} from "react";
 
 import { Dropdown } from 'primereact/dropdown';
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 
 import styled from "styled-components";
-//import { ToggleContext } from "../../Contexts/ToggleContexts";
+import { useSettingsStore } from "../../../Contexts/SettingsZustand";
+
 //mport { addOrder } from "../../helpers/addOrder";
 
 //import { findAvailableProducts } from "../../helpers/findAvailableProducts";
@@ -32,28 +33,39 @@ export const AddProdOverlayBody = () => {
   /*
   const { database, setIsModified, currentOrder, setCurrentOrder, chosen, delivDate, route, ponote } = useContext(ToggleContext)
 
-  
+  */
 
   const [pickedProd, setPickedProd] = useState('')
   const [qty, setQty] = useState(0)
+  const prodList = useSettingsStore((state) => state.prodList)
+  const productList = prodList.map(prod => {
+    return {label: prod.prodName, value: prod.prodNick}})
 
-  const products = findAvailableProducts(database[0], chosen, delivDate, database[1])
+/*
+  const products = 
   const productList = products.map(prod => {
     return {label: prod.trueProdName, value: prod.prodName}})
 
-    let curr = {curr: currentOrder, chosen: chosen, delivDate: delivDate, route: route, ponote: ponote }
+    let curr = {
+      curr: currentOrder, 
+      chosen: chosen, 
+      delivDate: delivDate, 
+      route: route, 
+      ponote: ponote 
+    }
 
-
+    */
     const makeChange = (e, simpleItem) => {
-      
+      /*
       if (e !== 0){
         setIsModified(true)
         let newOrder = addOrder(database, curr, simpleItem, e)
         setCurrentOrder(newOrder)
      
       }
+      */
     }
-
+    
   return (
     
         <BasicContainer>
@@ -78,5 +90,5 @@ export const AddProdOverlayBody = () => {
           
         </BasicContainer>
      
-  );*/
+  );
 };

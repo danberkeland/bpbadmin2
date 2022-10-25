@@ -1,53 +1,185 @@
-import React, { useState } from "react";
+import React from "react";
+import { CustomInputs } from "../../FormComponents/CustomInputs";
 
-import { Button } from "primereact/button";
+import { validationSchema } from "./ValidationSchema";
 
-import { motion } from "framer-motion";
-import UpdateProductForm from "./UpdateProductForm";
+import { deleteProduct, updateProduct, createProduct } from "../../restAPIs";
+import { withFadeIn } from "../../hoc/withFadeIn";
+import { withBPBForm } from "../../hoc/withBPBForm";
+import { GroupBox } from "../../CommonStyles";
+import { compose } from "../../utils";
 
-function ProductDetails({ selectedProduct }) {
-  const [edit, setEdit] = useState(false);
+const BPB = new CustomInputs();
 
-  const editButtonStyle = {
-    width: "100px",
-    margin: "20px",
-    fontSize: "1.2em",
-    backgroundColor: "#006aff",
-  };
+function ProductDetails({ initialState }) {
+  const packGroups = [
+    { label: "Baked Pastries", value: "baked pastries" },
+    { label: "Frozen Pastries", value: "frozen pastries" },
+    { label: "Rustic Breads", value: "rustic breads" },
+    { label: "Brioche Products", value: "brioche products" },
+    { label: "Sandwich Breads", value: "sandwich breads" },
+    { label: "Rolls", value: "rolls" },
+    { label: "Focaccia", value: "focaccia" },
+    { label: "Retail", value: "retail" },
+    { label: "Cafe Menu", value: "cafe menu" },
+  ];
 
-  const handleEdit = () => {
-    setEdit(!edit);
-  };
+  const doughs = [
+    { label: "French", value: "french" },
+    { label: "Baguette", value: "baguette" },
+    { label: "Brioche", value: "brioche" },
+    { label: "Croissant", value: "croix" },
+    { label: "Levain", value: "lev" },
+    { label: "Rustic Rye", value: "rusticRye" },
+    { label: "Multigrain", value: "multi" },
+    { label: "Ciabatta", value: "cia" },
+    { label: "Doobie", value: "doobie" },
+    { label: "Siciliano", value: "siciliano" },
+  ];
+
+  const bakedWhere = [
+    { label: "Prado", value: "prado" },
+    { label: "Carlton", value: "carlton" },
+  ];
+
+  const BPBProductForm = compose(
+    withBPBForm,
+    withFadeIn
+  )((props) => {
+    return (
+      <React.Fragment>
+        <GroupBox>
+          <h2>
+            <i className="pi pi-user"></i> Product Description
+          </h2>
+          <BPB.CustomIDInput
+            label="Product ID"
+            name="prodNick"
+            dontedit="true"
+            converter={props}
+          />
+          <BPB.CustomTextInput
+            label="Product Name"
+            name="prodName"
+            converter={props}
+          />
+          <BPB.CustomTextInput
+            label="Square ID"
+            name="squareID"
+            converter={props}
+          />
+          <BPB.CustomTextInput label="QB ID" name="qbID" converter={props} />
+        </GroupBox>
+        <GroupBox>
+          <h2>
+            <i className="pi pi-dollar"></i> Billing
+          </h2>
+          <BPB.CustomFloatInput
+            label="Wholesale Price"
+            name="wholePrice"
+            converter={props}
+          />
+          <BPB.CustomFloatInput
+            label="Retail Price"
+            name="retailPrice"
+            converter={props}
+          />
+          <BPB.CustomYesNoInput
+            label="Available Wholesale?"
+            name="isWhole"
+            converter={props}
+          />
+          <BPB.CustomYesNoInput
+            label="Default Include?"
+            name="defaultInclude"
+            converter={props}
+          />
+        </GroupBox>
+
+        <GroupBox>
+          <BPB.CustomDropdownInput
+            label="Pack Group"
+            name="packGroup"
+            options={packGroups}
+            converter={props}
+          />
+          <BPB.CustomIntInput
+            label="Pack Size"
+            name="packSize"
+            converter={props}
+          />
+          <BPB.CustomYesNoInput
+            label="Freezer Thaw?"
+            name="freezerThaw"
+            converter={props}
+          />
+          <BPB.CustomYesNoInput
+            label="Count EOD?"
+            name="isEOD"
+            converter={props}
+          />
+        </GroupBox>
+        <GroupBox>
+          <h2>
+            <i className="pi pi-dollar"></i> Baking Info
+          </h2>
+          <BPB.CustomDropdownInput
+            label="Dough Type"
+            name="doughNick"
+            options={doughs}
+            converter={props}
+          />
+          <BPB.CustomIntInput
+            label="Lead Time"
+            name="leadTime"
+            converter={props}
+          />
+          <BPB.CustomTextInput
+            label="For Bake"
+            name="forBake"
+            converter={props}
+          />
+          <BPB.CustomMultiSelectInput
+            label="Baked Where"
+            name="bakedWhere"
+            options={bakedWhere}
+            converter={props}
+          />
+
+          <BPB.CustomFloatInput
+            label="Guaranteed Ready (0-24)"
+            name="readyTime"
+            converter={props}
+          />
+          <BPB.CustomIntInput
+            label="Batch Size"
+            name="batchSize"
+            converter={props}
+          />
+          <BPB.CustomIntInput
+            label="Bake Extra"
+            name="bakeExtra"
+            converter={props}
+          />
+          <BPB.CustomFloatInput
+            label="Weight"
+            name="weight"
+            converter={props}
+          />
+        </GroupBox>
+      </React.Fragment>
+    );
+  });
 
   return (
-    <React.Fragment>
-      {/*<pre>Selected Product: {JSON.stringify(selectedProduct, null, 4)}</pre>*/}
-
-      {!edit ? (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <div className="productDetails">
-            <h1>{selectedProduct.prodName}</h1>
-            <Button
-              label="Edit"
-              className="editButton p-button-raised p-button-rounded"
-              style={editButtonStyle}
-              onClick={handleEdit}
-            />
-            <h2>ID: {selectedProduct.prodNick}</h2>
-            <h3>Wholesale Price: {selectedProduct.wholePrice}</h3>
-            <h3>Pack Size: {selectedProduct.packSize}</h3>
-          </div>
-        </motion.div>
-      ) : (
-        <UpdateProductForm selectedProduct={selectedProduct} />
-      )}
-
-      <div className="bottomSpace"></div>
-    </React.Fragment>
+    <BPBProductForm
+      name="product"
+      validationSchema={validationSchema}
+      initialState={initialState}
+      create={createProduct}
+      delete={deleteProduct}
+      update={updateProduct}
+    />
   );
 }
 

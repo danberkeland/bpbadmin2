@@ -1,63 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { useSettingsStore } from "../../Contexts/SettingsZustand";
-
-import { grabDetailedProductList } from "../../restAPIs";
 import ProductList from "./ProductList";
 import ProductDetails from "./ProductDetails";
-import { motion } from "framer-motion";
+import { withFadeIn } from "../../hoc/withFadeIn";
 
 function Products() {
-  const setIsLoading = useSettingsStore((state) => state.setIsLoading);
-
-  const [productData, setProductData] = useState([{}]);
   const [selectedProduct, setSelectedProduct] = useState("");
-
-  useEffect(() => {
-    setIsLoading(true);
-    grabDetailedProductList().then((result) => {
-      setProductData(result);
-      setIsLoading(false);
-    });
-  }, []);
-
 
   const handleProdClick = () => {
     setSelectedProduct("");
   };
 
+  const FadeProductList = withFadeIn(() => {
+    return (
+      <ProductList
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
+      />
+    );
+  });
+
   return (
-    <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-    
-      {selectedProduct !== "" ? (
+    <React.Fragment>
+      {selectedProduct === "" ? (
+        <FadeProductList />
+      ) : (
         <React.Fragment>
           <button onClick={handleProdClick}>PRODUCT LIST</button>
-          <ProductDetails selectedProduct={selectedProduct} />
+          <ProductDetails initialState={selectedProduct} />
         </React.Fragment>
-      ) : (
-        <div></div>
       )}
-      {selectedProduct === "" ? (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <ProductList
-            selectedProduct={selectedProduct}
-            setSelectedProduct={setSelectedProduct}
-            productData={productData}
-            setProductData={setProductData}
-          />
-        </motion.div>
-      ) : (
-        <div></div>
-      )}
-    </motion.div>
+    </React.Fragment>
   );
 }
 

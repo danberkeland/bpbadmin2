@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 
 import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 
-//import { Fulfill } from "./OrderingParts/FulfillOptions";
-//import { DataScroll } from "./OrderingParts/DataScroller";
+import { DataScroll } from "./OrderingParts/DataScroller";
 import { Cal } from "./OrderingParts/Calendar";
 import { AddProduct } from "./OrderingParts/AddProduct";
 import { Fulfill } from "./OrderingParts/FullfillOptions";
 
 import styled from "styled-components";
 import { useSettingsStore } from "../../Contexts/SettingsZustand";
-import { grabDetailedLocationList } from "../../restAPIs";
+
+import { useLocUserList, useSimpleLocationList } from "../../swr";
 
 const BasicContainer = styled.div`
   display: flex;
@@ -45,13 +45,13 @@ const PONote = () => {
   };
 
   return (
-    <BasicContainer>
+    <React.Fragment>
       <InputText
         value={ponote}
         onChange={(e) => handlePonote(e.target.value, setPonote, setIsModified)}
         placeholder="PO#/Special Instructions..."
       />
-    </BasicContainer>
+    </React.Fragment>
   );
 };
 
@@ -95,32 +95,24 @@ const Submit = () => {
 const CustList = () => {
   const chosen = useSettingsStore((state) => state.chosen);
   const setChosen = useSettingsStore((state) => state.setChosen);
-  const locList = useSettingsStore((state) => state.locList);
-  const setLocList = useSettingsStore((state) => state.setLocList);
   const setIsModified = useSettingsStore((state) => state.setIsModified);
-  const setIsLoading = useSettingsStore((state) => state.setIsLoading);
 
-  useEffect(() => {
-    setIsLoading(true);
-    grabDetailedLocationList().then((result) => {
-      setLocList(result);
-      setIsLoading(false);
-    });
-  }, []);
+  const { locationList } = useLocUserList();
+  const { simpleLocationList } = useSimpleLocationList();
 
-  const locs = locList.map((loc) => ({
-    label: loc.locName,
-    value: loc.locNick,
-  }));
+  const handleChosen = (e) => {
+    let ind = locationList.data.findIndex((loc) => loc.locNick === e.value);
+    setChosen(locationList.data[ind]);
+  };
 
   return (
     <Dropdown
-      value={chosen}
+      value={chosen.locNick}
       name="custDropDown"
-      options={locs}
+      options={simpleLocationList.data}
       onChange={(e) => {
         setIsModified(false);
-        setChosen(e.value);
+        handleChosen(e);
       }}
       placeholder="Select a Customer"
     />
@@ -128,16 +120,18 @@ const CustList = () => {
 };
 
 export const Ordering = () => {
+  const op = useRef(null);
+
   return (
     <React.Fragment>
-      {/*<AddProdMod />*/}
+      <AddProdMod op={op} />
       <BasicContainer>
         <CustList />
         <Cal />
+        <Fulfill />
+        <PONote />
       </BasicContainer>
-      <Fulfill />
-      <PONote />
-  {/*<DataScroll />*/}
+      <DataScroll />
     </React.Fragment>
   );
 };
