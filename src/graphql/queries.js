@@ -529,6 +529,8 @@ export const getLocation = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -545,6 +547,7 @@ export const getLocation = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -752,6 +755,8 @@ export const getProduct = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -768,6 +773,7 @@ export const getProduct = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1173,6 +1179,7 @@ export const getOrder = /* GraphQL */ `
       SO
       isWhole
       delivDate
+      delivDateISO
       rate
       isLate
       createdOn
@@ -1259,6 +1266,7 @@ export const listOrders = /* GraphQL */ `
         SO
         isWhole
         delivDate
+        delivDateISO
         rate
         isLate
         createdOn
@@ -1420,6 +1428,8 @@ export const getStanding = /* GraphQL */ `
       dayOfWeek
       startDate
       endDate
+      startDateISO
+      endDateISO
       createdAt
       updatedAt
     }
@@ -1505,6 +1515,8 @@ export const listStandings = /* GraphQL */ `
         dayOfWeek
         startDate
         endDate
+        startDateISO
+        endDateISO
         createdAt
         updatedAt
       }
@@ -4401,6 +4413,7 @@ export const orderByCreatedAt = /* GraphQL */ `
         SO
         isWhole
         delivDate
+        delivDateISO
         rate
         isLate
         createdOn

@@ -122,8 +122,10 @@ export const onDeleteLocationBackup = /* GraphQL */ `
   }
 `;
 export const onCreateProductBackup = /* GraphQL */ `
-  subscription OnCreateProductBackup {
-    onCreateProductBackup {
+  subscription OnCreateProductBackup(
+    $filter: ModelSubscriptionProductBackupFilterInput
+  ) {
+    onCreateProductBackup(filter: $filter) {
       id
       prodName
       nickName
@@ -173,8 +175,10 @@ export const onCreateProductBackup = /* GraphQL */ `
   }
 `;
 export const onUpdateProductBackup = /* GraphQL */ `
-  subscription OnUpdateProductBackup {
-    onUpdateProductBackup {
+  subscription OnUpdateProductBackup(
+    $filter: ModelSubscriptionProductBackupFilterInput
+  ) {
+    onUpdateProductBackup(filter: $filter) {
       id
       prodName
       nickName
@@ -224,8 +228,10 @@ export const onUpdateProductBackup = /* GraphQL */ `
   }
 `;
 export const onDeleteProductBackup = /* GraphQL */ `
-  subscription OnDeleteProductBackup {
-    onDeleteProductBackup {
+  subscription OnDeleteProductBackup(
+    $filter: ModelSubscriptionProductBackupFilterInput
+  ) {
+    onDeleteProductBackup(filter: $filter) {
       id
       prodName
       nickName
@@ -275,8 +281,10 @@ export const onDeleteProductBackup = /* GraphQL */ `
   }
 `;
 export const onCreateOrderBackup = /* GraphQL */ `
-  subscription OnCreateOrderBackup {
-    onCreateOrderBackup {
+  subscription OnCreateOrderBackup(
+    $filter: ModelSubscriptionOrderBackupFilterInput
+  ) {
+    onCreateOrderBackup(filter: $filter) {
       id
       qty
       prodName
@@ -295,8 +303,10 @@ export const onCreateOrderBackup = /* GraphQL */ `
   }
 `;
 export const onUpdateOrderBackup = /* GraphQL */ `
-  subscription OnUpdateOrderBackup {
-    onUpdateOrderBackup {
+  subscription OnUpdateOrderBackup(
+    $filter: ModelSubscriptionOrderBackupFilterInput
+  ) {
+    onUpdateOrderBackup(filter: $filter) {
       id
       qty
       prodName
@@ -315,8 +325,10 @@ export const onUpdateOrderBackup = /* GraphQL */ `
   }
 `;
 export const onDeleteOrderBackup = /* GraphQL */ `
-  subscription OnDeleteOrderBackup {
-    onDeleteOrderBackup {
+  subscription OnDeleteOrderBackup(
+    $filter: ModelSubscriptionOrderBackupFilterInput
+  ) {
+    onDeleteOrderBackup(filter: $filter) {
       id
       qty
       prodName
@@ -335,8 +347,10 @@ export const onDeleteOrderBackup = /* GraphQL */ `
   }
 `;
 export const onCreateStandingBackup = /* GraphQL */ `
-  subscription OnCreateStandingBackup {
-    onCreateStandingBackup {
+  subscription OnCreateStandingBackup(
+    $filter: ModelSubscriptionStandingBackupFilterInput
+  ) {
+    onCreateStandingBackup(filter: $filter) {
       id
       timeStamp
       prodName
@@ -355,8 +369,10 @@ export const onCreateStandingBackup = /* GraphQL */ `
   }
 `;
 export const onUpdateStandingBackup = /* GraphQL */ `
-  subscription OnUpdateStandingBackup {
-    onUpdateStandingBackup {
+  subscription OnUpdateStandingBackup(
+    $filter: ModelSubscriptionStandingBackupFilterInput
+  ) {
+    onUpdateStandingBackup(filter: $filter) {
       id
       timeStamp
       prodName
@@ -375,8 +391,10 @@ export const onUpdateStandingBackup = /* GraphQL */ `
   }
 `;
 export const onDeleteStandingBackup = /* GraphQL */ `
-  subscription OnDeleteStandingBackup {
-    onDeleteStandingBackup {
+  subscription OnDeleteStandingBackup(
+    $filter: ModelSubscriptionStandingBackupFilterInput
+  ) {
+    onDeleteStandingBackup(filter: $filter) {
       id
       timeStamp
       prodName
@@ -395,8 +413,10 @@ export const onDeleteStandingBackup = /* GraphQL */ `
   }
 `;
 export const onCreateRouteBackup = /* GraphQL */ `
-  subscription OnCreateRouteBackup {
-    onCreateRouteBackup {
+  subscription OnCreateRouteBackup(
+    $filter: ModelSubscriptionRouteBackupFilterInput
+  ) {
+    onCreateRouteBackup(filter: $filter) {
       id
       routeName
       routeStart
@@ -413,8 +433,10 @@ export const onCreateRouteBackup = /* GraphQL */ `
   }
 `;
 export const onUpdateRouteBackup = /* GraphQL */ `
-  subscription OnUpdateRouteBackup {
-    onUpdateRouteBackup {
+  subscription OnUpdateRouteBackup(
+    $filter: ModelSubscriptionRouteBackupFilterInput
+  ) {
+    onUpdateRouteBackup(filter: $filter) {
       id
       routeName
       routeStart
@@ -431,8 +453,10 @@ export const onUpdateRouteBackup = /* GraphQL */ `
   }
 `;
 export const onDeleteRouteBackup = /* GraphQL */ `
-  subscription OnDeleteRouteBackup {
-    onDeleteRouteBackup {
+  subscription OnDeleteRouteBackup(
+    $filter: ModelSubscriptionRouteBackupFilterInput
+  ) {
+    onDeleteRouteBackup(filter: $filter) {
       id
       routeName
       routeStart
@@ -449,8 +473,10 @@ export const onDeleteRouteBackup = /* GraphQL */ `
   }
 `;
 export const onCreateZoneBackup = /* GraphQL */ `
-  subscription OnCreateZoneBackup {
-    onCreateZoneBackup {
+  subscription OnCreateZoneBackup(
+    $filter: ModelSubscriptionZoneBackupFilterInput
+  ) {
+    onCreateZoneBackup(filter: $filter) {
       id
       zoneNum
       zoneName
@@ -461,8 +487,10 @@ export const onCreateZoneBackup = /* GraphQL */ `
   }
 `;
 export const onUpdateZoneBackup = /* GraphQL */ `
-  subscription OnUpdateZoneBackup {
-    onUpdateZoneBackup {
+  subscription OnUpdateZoneBackup(
+    $filter: ModelSubscriptionZoneBackupFilterInput
+  ) {
+    onUpdateZoneBackup(filter: $filter) {
       id
       zoneNum
       zoneName
@@ -473,8 +501,10 @@ export const onUpdateZoneBackup = /* GraphQL */ `
   }
 `;
 export const onDeleteZoneBackup = /* GraphQL */ `
-  subscription OnDeleteZoneBackup {
-    onDeleteZoneBackup {
+  subscription OnDeleteZoneBackup(
+    $filter: ModelSubscriptionZoneBackupFilterInput
+  ) {
+    onDeleteZoneBackup(filter: $filter) {
       id
       zoneNum
       zoneName
@@ -751,6 +781,8 @@ export const onCreateLocation = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -767,6 +799,7 @@ export const onCreateLocation = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -872,6 +905,8 @@ export const onUpdateLocation = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -888,6 +923,7 @@ export const onUpdateLocation = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -993,6 +1029,8 @@ export const onDeleteLocation = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -1009,6 +1047,7 @@ export const onDeleteLocation = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1143,6 +1182,8 @@ export const onCreateProduct = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -1159,6 +1200,7 @@ export const onCreateProduct = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1368,6 +1410,8 @@ export const onUpdateProduct = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -1384,6 +1428,7 @@ export const onUpdateProduct = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1593,6 +1638,8 @@ export const onDeleteProduct = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -1609,6 +1656,7 @@ export const onDeleteProduct = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1910,6 +1958,7 @@ export const onCreateOrder = /* GraphQL */ `
       SO
       isWhole
       delivDate
+      delivDateISO
       rate
       isLate
       createdOn
@@ -2068,6 +2117,7 @@ export const onUpdateOrder = /* GraphQL */ `
       SO
       isWhole
       delivDate
+      delivDateISO
       rate
       isLate
       createdOn
@@ -2226,6 +2276,7 @@ export const onDeleteOrder = /* GraphQL */ `
       SO
       isWhole
       delivDate
+      delivDateISO
       rate
       isLate
       createdOn
@@ -2385,6 +2436,8 @@ export const onCreateStanding = /* GraphQL */ `
       dayOfWeek
       startDate
       endDate
+      startDateISO
+      endDateISO
       createdAt
       updatedAt
     }
@@ -2542,6 +2595,8 @@ export const onUpdateStanding = /* GraphQL */ `
       dayOfWeek
       startDate
       endDate
+      startDateISO
+      endDateISO
       createdAt
       updatedAt
     }
@@ -2699,6 +2754,8 @@ export const onDeleteStanding = /* GraphQL */ `
       dayOfWeek
       startDate
       endDate
+      startDateISO
+      endDateISO
       createdAt
       updatedAt
     }

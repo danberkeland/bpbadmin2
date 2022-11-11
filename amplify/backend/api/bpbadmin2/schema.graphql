@@ -266,6 +266,7 @@ type Order @model (timestamps: { createdAt: "createdOn"})  {
   SO: Int
   isWhole: Boolean
   delivDate: String
+  delivDateISO: AWSDate
   rate: Float
   isLate: Int
   createdOn: AWSDateTime!
@@ -285,7 +286,8 @@ type Standing @model {
   dayOfWeek: String
   startDate: String!
   endDate: String
-  
+  startDateISO: AWSDate
+  endDateISO: AWSDate
 }
 
 

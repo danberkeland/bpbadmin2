@@ -5,7 +5,7 @@ import awsmobile from "./aws-exports";
 
 import { SettingsContext } from "./Contexts/SettingsContext";
 
-import { Splash } from "./Auth/Splash";
+import { Splash } from "./Auth/Splash2";
 import { UserApplyForm } from "./Auth/UserApplyForm";
 import { UserResetPassword } from "./Auth/UserResetPassword";
 import { UserApplyThanks } from "./Auth/UserApplyThanks";
@@ -24,7 +24,7 @@ import {
   grabAuth,
   setAuthListener,
 } from "./Auth/AuthHelpers";
-import Loader from "./Loader";
+import Loader from "./Components/Loader/Loader";
 
 Amplify.configure(awsmobile);
 

@@ -5,7 +5,7 @@ import { ProgressSpinner } from 'primereact/progressspinner';
 
 
 import styled from 'styled-components'
-import { SettingsContext } from './Contexts/SettingsContext';
+import { SettingsContext } from '../../Contexts/SettingsContext';
 
 const LoaderSetup = styled.div`
     width: 100%;

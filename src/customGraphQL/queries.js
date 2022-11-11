@@ -34,35 +34,15 @@ export const getUser = /* GraphQL */ `
       defaultLoc {
         locNick
         locName
-        subs {
-          nextToken
-        }
-        zone
-        addr1
-        addr2
-        city
-        zip
-        email
-        phone
-        createdAt
-        updatedAt
       }
       locs {
         items {
           id
           authType
           locNick
-          sub
-          createdAt
-          updatedAt
-          locationSubsId
-          userLocsId
         }
         nextToken
       }
-      createdAt
-      updatedAt
-      userDefaultLocId
     }
   }
 `;
@@ -204,6 +184,78 @@ export const listLocationsForTable = /* GraphQL */ `
         updatedAt
       }
       nextToken
+    }
+  }
+`;
+
+export const listOrders = /* GraphQL */ `
+  query ListOrders(
+    $filter: ModelOrderFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listOrders(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        Type
+        id
+        qty
+        product {
+          prodNick
+          prodName
+        }
+        locNick
+        ItemNote
+        SO
+        isWhole
+        delivDate
+        rate
+        isLate
+        createdOn
+      }
+      nextToken
+    }
+  }
+`;
+
+export const listOrdersFromLocation = /* GraphQL */ `
+  query customQuery(
+    $locNick: String!
+    $dayOfWeek: String
+    $delivDate: String
+  ) {
+    getLocation(locNick: $locNick) {
+      locNick
+      standing (filter: {dayOfWeek: {eq: $dayOfWeek}}) {
+        items {
+          id
+          prodNick
+          qty
+          dayOfWeek
+          ItemNote
+          isWhole
+          isStand
+          startDate
+          endDate
+        }
+        nextToken
+      }
+      orders(filter: {delivDate: {eq: $delivDate}}) {
+        items {
+          id
+          prodNick
+          qty
+          delivDateISO
+          delivDate
+          ItemNote
+          SO
+          isWhole
+          rate
+          isLate
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;

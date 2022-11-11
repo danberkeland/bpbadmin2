@@ -811,6 +811,8 @@ export const createLocation = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -827,6 +829,7 @@ export const createLocation = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -935,6 +938,8 @@ export const updateLocation = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -951,6 +956,7 @@ export const updateLocation = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1059,6 +1065,8 @@ export const deleteLocation = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -1075,6 +1083,7 @@ export const deleteLocation = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1162,6 +1171,21 @@ export const createProduct = /* GraphQL */ `
       packGroup
       packSize
       doughNick
+      doughType {
+        doughNick
+        doughName
+        hydration
+        batchSize
+        mixedWhere
+        buckets {
+          nextToken
+        }
+        isBakeReady
+        buffer
+        saltInDry
+        createdAt
+        updatedAt
+      }
       freezerThaw
       packGroupOrder
       shapeDay
@@ -1185,8 +1209,184 @@ export const createProduct = /* GraphQL */ `
       defaultInclude
       leadTime
       qbID
+      standing {
+        items {
+          id
+          qty
+          prodNick
+          locNick
+          ItemNote
+          isWhole
+          isStand
+          dayOfWeek
+          startDate
+          endDate
+          startDateISO
+          endDateISO
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      orders {
+        items {
+          Type
+          id
+          qty
+          prodNick
+          locNick
+          ItemNote
+          SO
+          isWhole
+          delivDate
+          delivDateISO
+          rate
+          isLate
+          createdOn
+          updatedAt
+        }
+        nextToken
+      }
+      depends {
+        items {
+          id
+          prod1Nick
+          prod2Nick
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      altPricing {
+        items {
+          id
+          wholePrice
+          locNick
+          prodNick
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      templateProd {
+        items {
+          id
+          locNick
+          prodNick
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      prodsNotAllowed {
+        items {
+          id
+          locNick
+          prodNick
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      productVendor {
+        items {
+          id
+          prodNick
+          vendorNick
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      EODCount {
+        prodNick
+        product {
+          Type
+          prodName
+          prodNick
+          packGroup
+          packSize
+          doughNick
+          freezerThaw
+          packGroupOrder
+          shapeDay
+          shapeNick
+          bakeDay
+          bakeNick
+          guarantee
+          transferStage
+          readyTime
+          bakedWhere
+          wholePrice
+          retailPrice
+          isWhole
+          weight
+          descrip
+          picURL
+          squareID
+          forBake
+          bakeExtra
+          batchSize
+          defaultInclude
+          leadTime
+          qbID
+          createdAt
+          updatedAt
+          inventoryProductId
+        }
+        shelfOrFreezer
+        startOrFinish
+        location
+        qty
+        whoCounted
+        createdAt
+        updatedAt
+      }
+      ActualSetOut {
+        prodNick
+        prodName {
+          Type
+          prodName
+          prodNick
+          packGroup
+          packSize
+          doughNick
+          freezerThaw
+          packGroupOrder
+          shapeDay
+          shapeNick
+          bakeDay
+          bakeNick
+          guarantee
+          transferStage
+          readyTime
+          bakedWhere
+          wholePrice
+          retailPrice
+          isWhole
+          weight
+          descrip
+          picURL
+          squareID
+          forBake
+          bakeExtra
+          batchSize
+          defaultInclude
+          leadTime
+          qbID
+          createdAt
+          updatedAt
+          inventoryProductId
+        }
+        qty
+        location
+        whoSetOut
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
+      inventoryProductId
     }
   }
 `;
@@ -1252,6 +1452,8 @@ export const updateProduct = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -1268,6 +1470,7 @@ export const updateProduct = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1480,6 +1683,8 @@ export const deleteProduct = /* GraphQL */ `
           dayOfWeek
           startDate
           endDate
+          startDateISO
+          endDateISO
           createdAt
           updatedAt
         }
@@ -1496,6 +1701,7 @@ export const deleteProduct = /* GraphQL */ `
           SO
           isWhole
           delivDate
+          delivDateISO
           rate
           isLate
           createdOn
@@ -1800,6 +2006,7 @@ export const createOrder = /* GraphQL */ `
       SO
       isWhole
       delivDate
+      delivDateISO
       rate
       isLate
       createdOn
@@ -1961,6 +2168,7 @@ export const updateOrder = /* GraphQL */ `
       SO
       isWhole
       delivDate
+      delivDateISO
       rate
       isLate
       createdOn
@@ -2122,6 +2330,7 @@ export const deleteOrder = /* GraphQL */ `
       SO
       isWhole
       delivDate
+      delivDateISO
       rate
       isLate
       createdOn
@@ -2284,6 +2493,8 @@ export const createStanding = /* GraphQL */ `
       dayOfWeek
       startDate
       endDate
+      startDateISO
+      endDateISO
       createdAt
       updatedAt
     }
@@ -2444,6 +2655,8 @@ export const updateStanding = /* GraphQL */ `
       dayOfWeek
       startDate
       endDate
+      startDateISO
+      endDateISO
       createdAt
       updatedAt
     }
@@ -2604,6 +2817,8 @@ export const deleteStanding = /* GraphQL */ `
       dayOfWeek
       startDate
       endDate
+      startDateISO
+      endDateISO
       createdAt
       updatedAt
     }
