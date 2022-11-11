@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import create from "zustand"
 
 import { Calendar } from "primereact/calendar"
+import { InputTextarea } from "primereact/inputtextarea"
 
 import * as mockData from './mockData'
 import { Dropdown } from "primereact/dropdown"
@@ -75,13 +76,26 @@ export const Orders2 = () => {
                 placeholder={"Select Date"}
               />
             </div>
-            <div>Fufillment type (delivery/pickup)</div>
-            <div>PO#/instructions</div>
+            <div style={{padding: "2px 0px 2px 0px"}}>
+              <InputTextarea 
+                autoResize
+                placeholder={"Add a PO note"}
+              />
+            </div>
           </div>
         
         </div>
 
-        <div className="orderList">Order List</div>
+        <div className="card">
+          <header className="card-header">
+            <h3>Order List</h3>
+          </header>
+
+          <div className="card-body">
+            <p>(navigate between delivery/pickup)</p>
+            <p>(list body)</p>
+          </div>
+        </div>
 
         <div className="card" hidden={false}>
           <header className="card-header">
