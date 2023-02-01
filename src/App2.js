@@ -32,7 +32,7 @@ import { useSettingsStore } from "./Contexts/SettingsZustand";
 
 Amplify.configure(awsmobile);
 
-// for push
+// for push2
 
 export function App() {
   const setFormType = useSettingsStore((state) => state.setFormType);
