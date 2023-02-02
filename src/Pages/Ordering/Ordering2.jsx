@@ -1,16 +1,11 @@
 import React from "react"
-// import Orders5 from './Orders5'
-// import { Orders6 } from "./Orders6"
-// import Orders7 from "./Orders7"
-// import Orders8 from "./Orders8"
-import Orders9 from "./Orders9"
+import Orders10 from "./Components/Orders10/Orders10"
+import Orders9 from "./Components/Orders9/Orders9"
 
 const Ordering2 = () => {
 
   return(
-    // <Orders6 />
-    //<Orders7 />
-    <Orders9 />
+    <Orders10 />
   )
 }
 

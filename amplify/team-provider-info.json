@@ -149,7 +149,7 @@
         },
         "bpbadmin2fetchLayer": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",
-          "s3Key": "amplify-builds/bpbadmin2fetchLayer-LambdaLayerVersionf7127887-build.zip"
+          "s3Key": "amplify-builds/bpbadmin2fetchLayer-LambdaLayerVersion488d0f0d-build.zip"
         },
         "grabOrder": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",
@@ -169,7 +169,7 @@
         },
         "bpbadmin2testFetchLayer": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",
-          "s3Key": "amplify-builds/bpbadmin2testFetchLayer-LambdaLayerVersion248972aa-build.zip"
+          "s3Key": "amplify-builds/bpbadmin2testFetchLayer-LambdaLayerVersion96cc4b43-build.zip"
         },
         "createProduct": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",
@@ -189,7 +189,7 @@
         },
         "bpbadmin2anotherTest": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",
-          "s3Key": "amplify-builds/bpbadmin2anotherTest-LambdaLayerVersion08354f54-build.zip"
+          "s3Key": "amplify-builds/bpbadmin2anotherTest-LambdaLayerVersion3b219d5d-build.zip"
         },
         "grabSimpleLocationList": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",
@@ -205,7 +205,7 @@
         },
         "bpbadmin2SDKLayer": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",
-          "s3Key": "amplify-builds/bpbadmin2SDKLayer-LambdaLayerVersion82da3bd0-build.zip"
+          "s3Key": "amplify-builds/bpbadmin2SDKLayer-LambdaLayerVersion32d5c522-build.zip"
         },
         "createCognitoUser": {
           "deploymentBucketName": "amplify-bpbadmin2-auththree-34707-deployment",

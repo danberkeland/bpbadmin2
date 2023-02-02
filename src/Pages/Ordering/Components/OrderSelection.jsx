@@ -9,6 +9,7 @@ export const OrderSelection = ({selection}) => {
   return(
     <Card 
       title="Order Selection"
+      style={{margin: "10px"}}
     >
       <div>
         <span className="p-float-label p-fluid" style={{marginTop: "30px"}}>

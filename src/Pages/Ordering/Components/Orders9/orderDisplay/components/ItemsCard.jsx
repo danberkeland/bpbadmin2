@@ -9,9 +9,9 @@ import { InputNumber } from "primereact/inputnumber"
 import { OverlayPanel } from "primereact/overlaypanel"
 import { useRef } from "react"
 import TimeAgo from "timeago-react"
-import { getOrderSubmitDate, getWorkingDate } from "../../Functions/dateAndTime"
-import { useProductData } from "../../Data/productData"
-import { useLocationDetails } from "../../Data/locationData"
+import { getOrderSubmitDate, getWorkingDate } from "../../../../../Functions/dateAndTime"
+import { useProductData } from "../../../../../Data/productData"
+import { useLocationDetails } from "../../../../../Data/locationData"
 
 
 

@@ -4,7 +4,7 @@ import { Card } from "primereact/card";
 import { Dropdown } from "primereact/dropdown";
 import { Checkbox } from "primereact/checkbox";
 
-import { useLocationDetails, useLocationList } from "../Data/locationData";
+import { useLocationDetails, useLocationList } from "../../../Data/locationData";
 
 
 
@@ -14,7 +14,7 @@ export const AdminControls = ({ adminSettings, orderingType }) => {
   const { data:locationDetails } = useLocationDetails(location, !!location) // load on selection; for use elsewhere
 
   return(
-    <Card title="AdminControls">
+    <Card title="AdminControls" style={{margin: "10px", height:"192px"}}>
       <LocationDropdown 
         location={location}
         setLocation={setLocation}
@@ -65,6 +65,9 @@ const LocationDropdown = ({ location, setLocation }) => {
         optionValue="locNick"
         value={location}
         filter
+        filterBy="locName,locNick"
+        showFilterClear
+        resetFilterOnHide
         onChange={e => setLocation(e.value)}
       />
       <label htmlFor="locationDropdown">{locationList ? "Location" : (locationListErrors ? "Error" : "Loading...")}</label>

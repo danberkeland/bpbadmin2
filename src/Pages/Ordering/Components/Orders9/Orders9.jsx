@@ -21,17 +21,19 @@
 // should also point to the same address, so useEffects should also
 // not detect changes.
 
+//import "./orders9.css"
+
 import React, { useState } from "react"
-import { useSettingsStore } from "../../Contexts/SettingsZustand"
+import { useSettingsStore } from "../../../../Contexts/SettingsZustand"
 
-import { getWorkingDateTime } from "./Functions/dateAndTime"
+import { getWorkingDateTime } from "../../Functions/dateAndTime"
 
-import { OrderDisplay } from "./Components/OrderDisplay"
-import { OrderSelection } from "./Components/OrderSelection"
-import { RadioButton } from "primereact/radiobutton"
+import { OrderDisplay } from "./Components/orderDisplay/OrderDisplay"
+import { OrderSelection } from "../OrderSelection"
+// import { RadioButton } from "primereact/radiobutton"
 import { TabMenu } from "primereact/tabmenu"
 
-import { StandingDisplay } from "./Components/StandingDisplay"
+import { StandingDisplay } from "./Components/standingDisplay/StandingDisplay"
 import { AdminControls } from "./Components/AdminControls"
 
 const Orders9 = () => {
@@ -63,8 +65,12 @@ const Orders9 = () => {
 
   return (
     <div> 
+      {user.location === 'backporch' && <AdminControls
+          adminSettings={adminSettings}
+          orderingType={orderingType}
+        />}
+
       <TabMenu 
-        style={{width: '60%'}}
         model={[
           {label: 'Cart', value: 'cart', icon: 'pi pi-fw pi-shopping-cart'},
           {label: 'Standing', value: 'standing', icon: 'pi pi-fw pi-calendar'}
@@ -75,16 +81,6 @@ const Orders9 = () => {
           setOrderingType(e.value.value)
         }}
       />
-
-      {user.location === 'backporch' &&
-        <AdminControls
-          adminSettings={adminSettings}
-          orderingType={orderingType}
-        />
-      
-      }
-
-
 
       {orderingType === 'cart' && <>
         <OrderSelection 
@@ -98,12 +94,10 @@ const Orders9 = () => {
         />
       </>}
 
-      {orderingType === 'standing' && <>
-        <StandingDisplay
+      {orderingType === 'standing' && <StandingDisplay
           standingSettings={standingSettings}
           user={user}
-        />
-      </>}
+        />}
  
       {/* <pre>{"LOCATION DETAILS: " + JSON.stringify(locationDetails, null, 2)}</pre> */}
       {/* <pre>{"CART DATA (first 3): " + JSON.stringify(cartData?.slice(0, 3), null, 2)}</pre> */}

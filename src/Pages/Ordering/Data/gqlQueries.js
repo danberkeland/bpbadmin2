@@ -291,8 +291,38 @@ export const listProducts = /* GraphQL */ `
       items {
         prodName
         prodNick
+        leadTime
+        defaultInclude
       }
       nextToken
+    }
+  }
+`;
+
+export const getProduct = /* GraphQL */ `
+  query GetProduct($prodNick: String!) {
+    getProduct(prodNick: $prodNick) {
+      prodName
+      prodNick
+      packGroup
+      packSize
+      doughType {
+        doughNick
+        doughName
+      }
+      readyTime
+      wholePrice
+      retailPrice
+      isRetail
+      retailName
+      retailDescrip
+      isWhole
+      weight
+      descrip
+      picURL
+      squareID
+      defaultInclude
+      leadTime
     }
   }
 `;

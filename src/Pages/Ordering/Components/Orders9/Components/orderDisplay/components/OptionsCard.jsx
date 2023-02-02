@@ -10,7 +10,7 @@ export const OptionsCard = ({ orderHeaderState, readOnly }) => {
 
   return (
     <Card 
-      style={{marginTop: "10px"}}
+      style={{margin: "10px"}}
       title={readOnly ? "Items (Read Only)" : "Items"}
     >
       {orderHeaderChanges &&
